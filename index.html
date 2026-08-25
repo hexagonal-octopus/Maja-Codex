@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f45b49" />
+    <title>Pomelo — Focus Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Pomelo home">
+        <span class="brand-mark"><span></span></span>
+        <span>pomelo</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button" id="soundButton" type="button" aria-label="Mute completion sound" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.8 8.5H3v7h3.8L11 19V5Zm4.2 4a4.1 4.1 0 0 1 0 6m2.7-8.7a8 8 0 0 1 0 11.4"/></svg>
+        </button>
+        <button class="icon-button" id="themeButton" type="button" aria-label="Toggle dark theme" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Time to make time.</p>
+        <h1 id="page-title">Find your <em>focus.</em></h1>
+        <p class="lede">One task. One timer. No distractions.<br />Let’s make this session count.</p>
+      </section>
+
+      <section class="timer-card" aria-label="Pomodoro timer">
+        <div class="mode-tabs" role="tablist" aria-label="Timer mode">
+          <button class="mode-tab active" type="button" role="tab" aria-selected="true" data-minutes="25" data-mode="focus">Focus</button>
+          <button class="mode-tab" type="button" role="tab" aria-selected="false" data-minutes="5" data-mode="short">Short break</button>
+          <button class="mode-tab" type="button" role="tab" aria-selected="false" data-minutes="15" data-mode="long">Long break</button>
+        </div>
+
+        <div class="timer-display" id="timerDisplay" role="timer" aria-live="off" aria-label="25 minutes remaining">25:00</div>
+        <p class="timer-prompt" id="timerPrompt">Ready when you are.</p>
+
+        <div class="timer-controls">
+          <button class="reset-button" id="resetButton" type="button" aria-label="Reset timer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M5.2 15a7.5 7.5 0 1 0 .6-7.6L4 10"/></svg>
+          </button>
+          <button class="start-button" id="startButton" type="button">
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 8 5-8 5V7Z"/></svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7v10m6-10v10"/></svg>
+            <span>Start focus</span>
+          </button>
+          <span class="control-spacer" aria-hidden="true"></span>
+        </div>
+
+        <div class="session-progress">
+          <div class="progress-heading"><span>Today’s sessions</span><strong id="sessionCount">0 <span>/ 4</span></strong></div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+        </div>
+      </section>
+
+      <p class="tip"><span>✦</span> Put your phone away. Your future self will thank you.</p>
+    </main>
+
+    <footer><p>Small steps, beautiful progress.</p><span>Made for mindful work</span></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
